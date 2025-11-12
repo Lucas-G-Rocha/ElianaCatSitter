@@ -13,34 +13,43 @@ import 'swiper/css/pagination';
 
 function App() {
   const [imgUrl, setImgUrl] = useState('');
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   async function pegarUrlGato() {
     console.log('1');
-  try {
-    const result = await fetch('https://api.thecatapi.com/v1/images/search', {
-      headers: {
-        'x-api-key': 'live_tQyUcEJtW1GVRU8xXfD1FJeTwoHpvmfY7c9iT4DYXgDVtUmY7VkJmjiqfbfRqZya'
+    try {
+      setIsDisabled(true);
+      setIsLoading(true);
+      const result = await fetch('https://api.thecatapi.com/v1/images/search', {
+        headers: {
+          'x-api-key': 'live_tQyUcEJtW1GVRU8xXfD1FJeTwoHpvmfY7c9iT4DYXgDVtUmY7VkJmjiqfbfRqZya'
+        }
+      });
+
+      const response = await result.json();
+      
+      if (response?.[0]?.url) {
+        setImgUrl(response[0].url);
+      } else {
+        console.log(response);
+        alert('Não foi possível gerar imagem do gatinho :(');
       }
-    });
+      setIsDisabled(false);
+      setIsLoading(false);
+    } catch (err) {
+      setIsDisabled(false);
+      setIsLoading(false);
 
-    const response = await result.json();
-
-    if (response?.[0]?.url) {
-      setImgUrl(response[0].url);
-    } else {
-      console.log(response);
-      alert('Não foi possível gerar imagem do gatinho :(');
+      console.log(err);
+      alert('Ocorreu um erro desconhecido!');
     }
-  } catch (err) {
-    console.log(err);
-    alert('Ocorreu um erro desconhecido!');
   }
-}
 
-useEffect(() => {
-  pegarUrlGato();
-}, []);
-  
+  useEffect(() => {
+    pegarUrlGato();
+  }, []);
+
   return (
     <div className='w-full pb-[100px]'>
       <header className='w-full bg-white flex flex-row justify-around items-center h-10 fixed top-0 left-0 z-50'>
@@ -79,13 +88,13 @@ useEffect(() => {
               slidesPerView={1}
             >
               <SwiperSlide className='flex justify-center items-center'>
-                <img src="/image.png" alt="gato" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl"/>
+                <img src="/image.png" alt="gato" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
               </SwiperSlide>
               <SwiperSlide className='flex justify-center items-center'>
-                <img src="/image2.png" alt="gato" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl"/>
+                <img src="/image2.png" alt="gato" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
               </SwiperSlide>
               <SwiperSlide className='flex justify-center items-center'>
-                <img src="/image3.png" alt="gato"className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
+                <img src="/image3.png" alt="gato" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
               </SwiperSlide>
             </Swiper>
           </div>
@@ -131,26 +140,49 @@ useEffect(() => {
 
         </section>
 
+        <section className='pt-20 flex flex-col gap-y-4 items-center'>
+          <h1 className='text-2xl text-center'>Feedbacks</h1>
+          <div className='w-full max-h-400px'>
+            <Swiper
+              modules={[Pagination]}
+              pagination={{ clickable: true }}
+              spaceBetween={30}
+              slidesPerView={1}
+            >
+              <SwiperSlide className='flex justify-center items-center'>
+                <img src="/image.png" alt="gato" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
+              </SwiperSlide>
+              <SwiperSlide className='flex justify-center items-center'>
+                <img src="/image2.png" alt="gato" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
+              </SwiperSlide>
+              <SwiperSlide className='flex justify-center items-center'>
+                <img src="/image3.png" alt="gato" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </section>
+
         <section className='pt-20 flex flex-col gap-y-4 items-center' id='gatinhos'>
           <h1 className='text-2xl text-center text-[#D15511]'>Gatinhos</h1>
 
-          { imgUrl !== '' ? 
-          (<div className='flex flex-col items-center gap-y-4'>
-            <img src={imgUrl} alt="gatos"/>
-            <button className='bg-[#FBFF29] rounded-[5px] px-2 max-w-fit py-1 cursor-pointer'
-            onClick={() => {
-              pegarUrlGato()
-              }}>Mais Gatinhos, por favor!</button>
-          </div>)
-          :
-          (<p>Não foi possível gerar imagem :/</p>)
+          {imgUrl !== '' ?
+            isLoading ?
+              (<p>Carregando</p>) :
+              (<div className='flex flex-col items-center gap-y-4'>
+                <img src={imgUrl} alt="gatos" />
+                <button className='bg-[#FBFF29] rounded-[5px] px-2 max-w-fit py-1 cursor-pointer'
+                  onClick={() => {
+                    pegarUrlGato()
+                  }}
+                  disabled={isDisabled}
+                >Mais Gatinhos, por favor!</button>
+              </div>)
+            :
+            (<p>Não foi possível gerar imagem</p>)
           }
         </section>
 
-        <section className='pt-20 flex flex-col gap-y-4 items-center'>
-          <h1 className='text-2xl text-center'>Feedbacks</h1>
-          ...
-        </section>
+
       </main>
     </div>
   )
