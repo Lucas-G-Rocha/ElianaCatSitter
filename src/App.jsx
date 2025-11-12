@@ -42,7 +42,7 @@ useEffect(() => {
 }, []);
   
   return (
-    <div className='w-full h-full'>
+    <div className='w-full pb-[100px]'>
       <header className='w-full bg-white flex flex-row justify-around items-center h-10 fixed top-0 left-0 z-50'>
         <a href='/' className="text-[#D15511] text-[18px]">Eliana | CatSitter</a>
         <nav className='flex flex-row gap-x-8 items-center justify-center'>
@@ -91,7 +91,7 @@ useEffect(() => {
           </div>
         </section>
 
-        <section className='pt-20 flex flex-col gap-y-4 items-center'>
+        <section className='pt-20 flex flex-col gap-y-4 items-center' id='cuidados'>
           <h1 className='text-2xl text-center'>Cuidados com os <span className='text-[#D15511]'>Gatinhos</span></h1>
 
           <div className='w-11/12 grid grid-cols-2 items-stretch justify-center gap-2'>
@@ -131,18 +131,25 @@ useEffect(() => {
 
         </section>
 
-        <section className='pt-20 flex flex-col gap-y-4 items-center'>
+        <section className='pt-20 flex flex-col gap-y-4 items-center' id='gatinhos'>
           <h1 className='text-2xl text-center text-[#D15511]'>Gatinhos</h1>
 
           { imgUrl !== '' ? 
           (<div className='flex flex-col items-center gap-y-4'>
             <img src={imgUrl} alt="gatos"/>
             <button className='bg-[#FBFF29] rounded-[5px] px-2 max-w-fit py-1 cursor-pointer'
-            onClick={pegarUrlGato}>Mais Gatinhos, por favor!</button>
+            onClick={() => {
+              pegarUrlGato()
+              }}>Mais Gatinhos, por favor!</button>
           </div>)
           :
           (<p>Não foi possível gerar imagem :/</p>)
           }
+        </section>
+
+        <section className='pt-20 flex flex-col gap-y-4 items-center'>
+          <h1 className='text-2xl text-center'>Feedbacks</h1>
+          ...
         </section>
       </main>
     </div>
