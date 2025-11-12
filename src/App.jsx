@@ -63,7 +63,7 @@ function App() {
             <section className="flex flex-row justify-center w-full items-center scroll-mt-15" id='inicio'>
               <div className='flex flex-col flex-1 justify-center ml-4 gap-y-4'>
                 <h1 className='text-2xl w-full flex-1'>Bem vindo ao cantinho dos miados felizes</h1>
-                <a href="wa.me/5581084216699" className="bg-[#FBFF29] rounded-[5px] px-2 max-w-fit py-1">Vamos Conversar!</a>
+                <a href="wa.me/5581084216699" target='_blank' className="bg-[#FBFF29] rounded-[5px] px-2 max-w-fit py-1">Vamos Conversar!</a>
               </div>
               <SmileCat className='flex-1' />
             </section>
