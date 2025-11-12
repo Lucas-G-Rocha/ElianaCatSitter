@@ -33,7 +33,6 @@ function App() {
         setImgUrl(response[0].url);
       } else {
         console.log(response);
-        alert('Não foi possível gerar imagem do gatinho :(');
       }
       setIsDisabled(false);
       setIsLoading(false);
@@ -42,7 +41,6 @@ function App() {
       setIsLoading(false);
 
       console.log(err);
-      alert('Ocorreu um erro desconhecido!');
     }
   }
 
