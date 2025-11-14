@@ -25,7 +25,7 @@ Além disso, implementei um toque extra de **diversão e personalidade** para o 
 
 - **React** – para construção da interface  
 - **Vite** – para ambiente de desenvolvimento  
-- **CSS / Tailwind (caso aplicável)** – para estilização  
+- **Tailwind** – para estilização  
 - **TheCatAPI** – para exibir imagens aleatórias de gatos  
 - **Render** – hospedagem da aplicação  
 
