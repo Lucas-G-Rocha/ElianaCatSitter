@@ -1,16 +1,68 @@
-# React + Vite
+# 🐾 Eliana CatSitter – Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma **landing page** desenvolvida como portfólio para uma **CatSitter profissional**, que ainda não possuía um site para apresentar seus serviços.  
+O objetivo foi criar uma página simples, elegante e acolhedora, refletindo visualmente o carinho e a personalidade do trabalho dela com gatos.
 
-Currently, two official plugins are available:
+🔗 **Acesse o site:** https://elianacatsitter.onrender.com/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎨 Objetivo do Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+A proposta da landing page foi transmitir:
 
-## Expanding the ESLint configuration
+- um visual **fofo**, **calmo** e **limpo**  
+- cores suaves e aconchegantes  
+- identidade visual coerente com as que ela já utilizava em sua divulgação  
+- fácil leitura e navegação  
+- foco em transmitir confiança e profissionalismo  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Além disso, implementei um toque extra de **diversão e personalidade** para o site utilizando **TheCatAPI**, permitindo gerar fotos (ou GIFs) aleatórios de gatos — algo que combina perfeitamente com o serviço prestado.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **React** – para construção da interface  
+- **Vite** – para ambiente de desenvolvimento  
+- **CSS / Tailwind (caso aplicável)** – para estilização  
+- **TheCatAPI** – para exibir imagens aleatórias de gatos  
+- **Render** – hospedagem da aplicação  
+
+---
+
+## 🐱 Funcionalidades
+
+- Design leve, clean e responsivo  
+- Estrutura simples para destacar serviços e informações essenciais  
+- Botões e seções com estética suave e acolhedora  
+- Integração com **TheCatAPI**, exibindo imagens aleatórias de gatos a cada interação  
+- Página otimizada para carregamento rápido  
+
+---
+
+## 🌈 Identidade Visual
+
+As cores, fontes e elementos visuais foram escolhidos considerando:
+
+- a estética que a CatSitter já usava em seu material de divulgação  
+- tons suaves e amigáveis  
+- foco em transmitir cuidado, carinho e profissionalismo  
+
+---
+
+## 🚀 Objetivo Final
+
+Criar um site que ela possa:
+
+- compartilhar com clientes  
+- divulgar em redes sociais  
+- usar como portfólio  
+- apresentar seus serviços de forma organizada e confiável  
+
+---
+
+## 📌 Observações
+
+Este foi um projeto feito com carinho para ajudar na divulgação do trabalho dela.  
+Feedbacks e contribuições são sempre bem-vindos!
