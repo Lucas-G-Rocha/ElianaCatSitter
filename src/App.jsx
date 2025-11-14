@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 //svg
 import SmileCat from './assets/SmileCat.svg?react';
 import ThinkerCat from './assets/ThinkerCat.svg?react';
+import Whatsapp from './assets/Whatsapp.svg?react';
+import Instagram from './assets/Instagram.svg?react';
 
 //swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -172,6 +174,14 @@ function App() {
               }
             </section>
           </main>
+        </div>
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col-reverse gap-y-4">
+          <a href="https://wa.me/5581984216699" target='_blank'>
+            <Whatsapp className='w-10 h-auto'/>
+          </a>
+          <a href="https://www.instagram.com/elianacatsitter/" target='_blank'>
+            <Instagram className='w-10 h-auto'/>
+          </a>
         </div>
       </div>
   )
