@@ -98,6 +98,7 @@ function App() {
               </div>
             </section>
             <section className='pt-20 flex flex-col gap-y-4 items-center' id='cuidados'>
+              <p className='text-[12px] text-center max-w-[300px]'>Viaje tranquilo(a) mantendo a rotina do seu gatinho do jeitinho que ele já conhece! Vou até a sua casa e cuido dele com todo carinho na sua ausência.</p>
               <h1 className='text-2xl text-center'>Cuidados com os <span className='text-[#D15511]'>Gatinhos</span></h1>
               <div className='w-11/12 grid grid-cols-2 items-stretch justify-center gap-2'>
                 <div className='bg-[#D15511] rounded-[15px] p-4 text-center flex flex-col gap-y-2 justify-between'>
