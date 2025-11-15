@@ -86,6 +86,9 @@ function App() {
                 slidesPerView={1}
               >
                 <SwiperSlide className='flex justify-center items-center'>
+                  <img src="/momentos1.jpg" alt="gato" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
+                </SwiperSlide>
+                <SwiperSlide className='flex justify-center items-center'>
                   <img src="/image.png" alt="gato" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
                 </SwiperSlide>
                 <SwiperSlide className='flex justify-center items-center'>
