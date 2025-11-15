@@ -8,7 +8,7 @@ import Instagram from './assets/Instagram.svg?react';
 
 //swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -80,10 +80,15 @@ function App() {
             <h1 className='text-4xl text-[#D15511]'>Momentos</h1>
             <div className='w-full max-h-400px'>
               <Swiper
-                modules={[Pagination]}
+                modules={[Pagination, Autoplay]}
                 pagination={{ clickable: true }}
                 spaceBetween={30}
                 slidesPerView={1}
+                loop={true}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false
+                }}
               >
                 <SwiperSlide className='flex justify-center items-center'>
                   <img src="/momentos1.jpg" alt="gato" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
@@ -129,19 +134,21 @@ function App() {
 
               <div className='max-w-[350px] w-full max-h-400px'>
                 <Swiper
-                  modules={[Pagination]}
+                  modules={[Pagination, Autoplay]}
                   pagination={{ clickable: true }}
                   spaceBetween={30}
                   slidesPerView={1}
+                  loop={true}
+                  
                 >
+                  <SwiperSlide className='flex justify-center items-center max-w-[350px]'>
+                    <img src="/certificado3.jpg" alt="certificado" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
+                  </SwiperSlide>
                   <SwiperSlide className='flex justify-center items-center max-w-[350px]'>
                     <img src="/certificado1.jpg" alt="certificado" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
                   </SwiperSlide>
                   <SwiperSlide className='flex justify-center items-center max-w-[350px]'>
                     <img src="/certificado2.jpg" alt="certificado" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
-                  </SwiperSlide>
-                  <SwiperSlide className='flex justify-center items-center max-w-[350px]'>
-                    <img src="/certificado3.jpg" alt="certificado" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
                   </SwiperSlide>
                 </Swiper>
               </div>
@@ -190,10 +197,15 @@ function App() {
             <h1 className='text-2xl text-center'>Feedbacks</h1>
             <div className='w-full max-h-400px'>
               <Swiper
-                modules={[Pagination]}
+                modules={[Pagination, Autoplay]}
                 pagination={{ clickable: true }}
                 spaceBetween={30}
                 slidesPerView={1}
+                loop={true}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false
+                }}
               >
                 <SwiperSlide className='flex justify-center items-center'>
                   <img src="/feedback1.jpg" alt="feedback" className="max-h-[400px] ml-auto mr-auto object-contain rounded-xl" />
